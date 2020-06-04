@@ -1,0 +1,17 @@
+<div class="form-group">
+  <label *ngIf="label" for="{{ fieldName }}">{{ label }}</label>
+  <div class="input-wrapper">
+    <input
+      [attr.disabled]="c.disabled ? '' : null"
+      type="number"
+      #input
+      class="form-control"
+      min="0"
+      id="{{ fieldName }}"
+      (input)="onChange($event, input.value)"
+      (change)="onChange($event, input.value)"
+      (blur)="propagateTouched()"
+      [value]="c.value"
+    />
+  </div>
+</div>

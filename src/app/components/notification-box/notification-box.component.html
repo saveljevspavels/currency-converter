@@ -1,0 +1,9 @@
+<div class="notification-box">
+  <app-notification
+    *ngFor="let notification of messages.errors; let i = index"
+    (close)="removeMessage(i, 'errors')"
+    [class]="'danger'"
+  >
+    {{ notification }}
+  </app-notification>
+</div>

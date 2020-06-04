@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label *ngIf="label" for="{{ fieldName }}">{{ label }}</label>
+  <div class="input-wrapper">
+    <select
+      [attr.disabled]="c.disabled ? '' : null"
+      id="{{ fieldName }}"
+      #input
+      (change)="onChange($event, input.value)"
+      [(ngModel)]="selectedValue"
+    >
+      <option *ngFor="let option of options" [ngValue]="option">
+        {{ option.name || option }}
+      </option>
+    </select>
+  </div>
+</div>

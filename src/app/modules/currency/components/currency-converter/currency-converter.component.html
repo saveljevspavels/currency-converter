@@ -1,0 +1,52 @@
+<div class="currency-converter">
+  <form [formGroup]="form" #formDirective="ngForm">
+    <div class="currency-converter__wrapper">
+      <div>
+        <div class="currency-converter__input-group">
+          <app-currency-input
+            formControlName="valueFrom"
+            [label]="'Value From'"
+            [fieldName]="'valueFrom'"
+            [c]="form.controls.valueFrom"
+          ></app-currency-input>
+          <app-dropdown
+            formControlName="currencyFrom"
+            [c]="form.controls.currencyFrom"
+            [label]="'Currency From'"
+            [fieldName]="'currencyFrom'"
+            [options]="currencies"
+          ></app-dropdown>
+        </div>
+
+        <div class="currency-converter__input-group">
+          <app-currency-input
+            formControlName="valueTo"
+            [label]="'Value To'"
+            [fieldName]="'valueTo'"
+            [c]="form.controls.valueTo"
+          ></app-currency-input>
+
+          <app-dropdown
+            formControlName="currencyTo"
+            [c]="form.controls.currencyTo"
+            [label]="'Currency To'"
+            [fieldName]="'currencyTo'"
+            [options]="rates"
+          ></app-dropdown>
+        </div>
+      </div>
+      <button
+        class="currency-converter__swap-button"
+        (click)="swapCurrencies()"
+      >
+        Swap
+      </button>
+    </div>
+    <div class="currency-converter__rate-example">
+      <app-rate-example
+        [baseCurrency]="currencyFrom.value"
+        [convertRate]="currencyTo.value"
+      ></app-rate-example>
+    </div>
+  </form>
+</div>

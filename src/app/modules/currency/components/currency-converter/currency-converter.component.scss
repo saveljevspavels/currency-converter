@@ -1,0 +1,14 @@
+.currency-converter {
+  &__input-group {
+    display: flex;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__swap-button {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.notification {
+  display: flex;
+  align-items: center;
+  padding: $padding-default;
+  margin: 3px 0;
+  border-radius: 5px;
+
+  &--danger {
+    background-color: $color-danger;
+  }
+
+  &__content {
+    font-size: 14px;
+    flex-grow: 2;
+  }
+
+  &__close {
+    font-size: 30px;
+    line-height: 0;
+    cursor: pointer;
+    transform: rotate(45deg);
+  }
+}

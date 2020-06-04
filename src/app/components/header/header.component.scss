@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px -2px gray;
+  &__container {
+    display: flex;
+  }
+}

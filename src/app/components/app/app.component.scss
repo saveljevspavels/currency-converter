@@ -1,0 +1,20 @@
+@import '../../../styles/variables';
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  &__content {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    max-width: $app-width;
+    width: $app-width;
+    padding: $padding-default;
+  }
+}
